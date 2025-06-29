@@ -10,6 +10,7 @@ public class ClasseResponse {
     private int fraisInscription;
     private int mensualite;
     private int autreFrais;
-    private Long filiereId;
-    private Long niveauId;
+    private int nombrePlaces;
+    private String filiereLibelle;
+    private String niveauLibelle;
 } 

@@ -20,12 +20,25 @@ public class FiliereClient {
 
     public boolean existsById(Long id) {
         try {
-            // Appel GET pour vérifier l'existence (ex: /api/filieres/{id}/exists)
             Boolean exists = restTemplate.getForObject(filiereServiceUrl + "/" + id + "/exists", Boolean.class);
             if (exists == null) {
                 throw new NotFoundException("Filière avec id [" + id + "] inexistante!");
             }
             return exists;
+        } catch (RestClientException e) {
+            throw new ApiException("Erreur lors de la communication avec le service Filiere", 502);
+        }
+    }
+
+    public String getLibelleById(Long id) {
+        try {
+            // Appel à l'endpoint GET /{id}/libelle du microservice filière
+            String url = filiereServiceUrl + "/" + id + "/libelle";
+            String libelle = restTemplate.getForObject(url, String.class);
+            if (libelle == null) {
+                throw new NotFoundException("Filière avec id [" + id + "] inexistante!");
+            }
+            return libelle;
         } catch (RestClientException e) {
             throw new ApiException("Erreur lors de la communication avec le service Filiere", 502);
         }

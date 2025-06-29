@@ -1,13 +1,13 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/nom_de_ta_base
-    username: ton_utilisateur
-    password: ton_mot_de_passe
+    url: jdbc:mysql://localhost:3306/gesclasse
+    username: babaGM
+    password: GalsenMedic123!
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update 
+      ddl-auto: update
 clients:
-  filiere-url: http://localhost:8081/api/filieres
+  filiere-url: http://localhost:8082/api/filieres
   niveau-url: http://localhost:8082/api/niveaux 

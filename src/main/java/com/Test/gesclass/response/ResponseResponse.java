@@ -10,7 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class ResponseResponse<T> {
+    @Builder.Default
     private int code = 200;
+    @Builder.Default
     private String status = "OK";
     private T data;
     private String message;

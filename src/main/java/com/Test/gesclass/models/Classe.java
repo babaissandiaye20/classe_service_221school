@@ -21,6 +21,7 @@ public class Classe extends BaseModel {
     private int fraisInscription;
     private int mensualite;
     private int autreFrais;
+    private int nombrePlaces;
 
     // Au lieu d'une relation JPA, on stocke juste l'id de la filière
     private Long filiereId;

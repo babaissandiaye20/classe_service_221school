@@ -29,4 +29,18 @@ public class NiveauClient {
             throw new ApiException("Erreur lors de la communication avec le service Niveau", 502);
         }
     }
+
+    public String getLibelleById(Long id) {
+        try {
+            // Appel à l'endpoint GET /{id}/libelle du microservice niveau
+            String url = niveauServiceUrl + "/" + id + "/libelle";
+            String libelle = restTemplate.getForObject(url, String.class);
+            if (libelle == null) {
+                throw new NotFoundException("Niveau avec id [" + id + "] inexistant!");
+            }
+            return libelle;
+        } catch (RestClientException e) {
+            throw new ApiException("Erreur lors de la communication avec le service Niveau", 502);
+        }
+    }
 } 

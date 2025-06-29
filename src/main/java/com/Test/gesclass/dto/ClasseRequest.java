@@ -16,6 +16,8 @@ public class ClasseRequest {
     private Integer mensualite;
     @NotNull(message = "L'autre frais est obligatoire.")
     private Integer autreFrais;
+    @NotNull(message = "Le nombre de places est obligatoire.")
+    private Integer nombrePlaces;
     @NotNull(message = "L'identifiant de la filière est obligatoire.")
     private Long filiereId;
     @NotNull(message = "L'identifiant du niveau est obligatoire.")
