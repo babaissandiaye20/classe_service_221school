@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/nom_de_ta_base
+    username: utilisateur
+    password: mot_de_passe
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+clients:
+  filiere-url: http://localhost:8081/api/filieres
+  niveau-url: http://localhost:8082/api/niveaux 
